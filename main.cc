@@ -6,16 +6,16 @@
 int main(){
 
 
-Player Kate("Kate");
+Player* Kate = new Player("Kate");
 const int size = 5; 
 Maze maze(size);
-maze.NewGame(&Kate, 0);
+maze.NewGame(Kate, 0);
 while(!maze.IsGameOver()){
-	maze.TakeTurn(&Kate);
+	maze.TakeTurn(Kate);
 }
 
-std::cout << Kate.get_name() << " has " << Kate.get_lives() << " lives left and " 
-		<< Kate.get_points() << " points." << std::endl;
+std::cout << Kate->get_name() << " has " << Kate->get_lives() << " lives left and " 
+		<< Kate->get_points() << " points." << std::endl;
 
 
 
